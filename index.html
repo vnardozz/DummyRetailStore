@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--list of titles for each item to list-->
     <section>
         <ul>
             <li class="list active" data-filter="All">All</li>
@@ -16,7 +17,8 @@
             <li class="list" data-filter="chargers">chargers</li>
             <li class="list" data-filter="accesories">accesories</li>
         </ul>
-        <div class="Product">
+<!--list of titles for each item-->                
+        <div class="Product">            
             <div class="itemBox phoneCases"> <img src="img/phoneCases1.jpg"></div>
             <div class="itemBox watchBands"> <img src="img/watchBands1.jpg"></div>
             <div class="itemBox ipadCases"> <img src="img/ipadCases1.jpg"></div>
@@ -46,6 +48,8 @@ integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+
+//function to select and change images based on their data-filter value  
     $(document).ready(function(){
         $('.list').hover(function(){
             const value = $(this).attr('data-filter');
@@ -57,6 +61,8 @@ crossorigin="anonymous"></script>
                 $('.itemBox').filter('.'+value).show('1000');
             }
     })
+
+//function to change color of active class based hover position 
     $('.list').hover(function(){
         $(this).addClass('active').siblings().removeClass('active');    
     
